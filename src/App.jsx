@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import "./App.css";
 import PokerGameContext from "./context/connectWS";
+import PlayerCard from "./component/playerCard";
+import Card from "./component/card";
 
 function App() {
   const { roomId, readyState, lastMessage } = useContext(PokerGameContext);
@@ -28,15 +30,20 @@ function App() {
   return (
     <main>
       <div className="container">
-        <div className="board"></div>
+        <div className="board">
+          {data?.board?.map((card, index) => (
+            
+            <Card key={index} card={[card]} />
+          ))}
+        </div>
         {players.map((item, i) =>
           item.id == id ? (
             <div key={i} className="principal">
-              {item.cards}
+              <PlayerCard player={item} isPlayer={true}  id={i} />
             </div>
           ) : (
             <div key={i} className={`p${i + 1}`}>
-              {item.cards}
+              <PlayerCard player={item} isPlayer={false} id={i} />
             </div>
           )
         )}

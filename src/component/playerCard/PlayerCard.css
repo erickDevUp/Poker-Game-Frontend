@@ -1,0 +1,23 @@
+.player-card {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: #fff;
+}
+
+.player-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #fff;
+}
+
+.player-info {
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  font-weight: 600;
+  font-size:small;
+}

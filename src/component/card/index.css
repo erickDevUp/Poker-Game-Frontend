@@ -1,0 +1,6 @@
+.cardImg {
+    width: calc(53px * 0.8); /* 90% del ancho original */
+    height: calc(70px * 0.8); /* 90% del alto original */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    border-radius: 10%;
+   }
